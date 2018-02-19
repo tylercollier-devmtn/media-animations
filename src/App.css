@@ -8,13 +8,24 @@ nav {
   padding: 20px;
   background: black;
   color: white;
+  height: 20px;
+  transition: 2s;
 }
 
-
+.drawer {
+  display: none;
+  position: fixed;
+  right: 0;
+  background: lightsalmon;
+  height: 100vh;
+  top: 50px;
+}
 
 @media (min-width: 768px) {
   nav {
     background: gray;
+    height: 50px;
+    transition: 2s;
   }
 
   .links {
@@ -23,5 +34,99 @@ nav {
 
   .menu {
     display: none;
+  }
+
+  .drawer {
+    display: none;
+  }
+}
+
+
+.open {
+  display: initial;
+  animation-name: open-drawer;
+  animation-duration: 0.7s;
+  width: 200px;
+}
+
+@keyframes open-drawer {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 200px;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.square {
+  width: 200px;
+  height: 200px;
+  background: fuchsia;
+  background: rgb(255, 0, 255);
+}
+
+/* .square:hover {
+  transition: 2s;
+  font-size: 50px;
+  animation-name: color-spin;
+  animation-duration: 2s;
+} */
+
+.animation1 {
+  animation-name: color-spin;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  /* position: absolute; */
+  /* left: 0; */
+}
+.animation2 {
+  /* animation: slide-squish 3s ease 0.5s infinite; */
+  animation-name: slide-squish;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background: tomato;
+  border-radius: 50%;
+  /* transform: rotate(0.5turn); */
+}
+
+
+@keyframes slide-squish {
+  0% {
+    transform: rotate(-0.25turn);
+  }
+  100% {
+    transform: rotate(0.25turn);
+  }
+}
+
+@keyframes color-spin {
+  0% {
+    background: fuchsia;
+    /* left: 0; */
+  }
+
+  50% {
+    background: chartreuse;
+    font-size: 50px;
+    /* left: 50px; */
+  }
+
+  100% {
+    background: fuchsia;
+    /* left: 0; */
   }
 }
