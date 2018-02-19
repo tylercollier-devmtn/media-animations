@@ -1,0 +1,27 @@
+.links {
+  display: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: black;
+  color: white;
+}
+
+
+
+@media (min-width: 768px) {
+  nav {
+    background: gray;
+  }
+
+  .links {
+    display: initial;
+  }
+
+  .menu {
+    display: none;
+  }
+}
